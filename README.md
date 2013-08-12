@@ -16,8 +16,10 @@ I'll pass around the precise64.box somehow
 Straight-away (need to save time!), run:
 
 ```
-vagrant box add precise64 precise64.box # Add the precise64 vm image to vagrant
-vagrant up # Spin up the three boxes
+# Add the precise64 vm image to vagrant
+vagrant box add precise64 http://files.vagrantup.com/precise64.box
+# Spin up the three boxes
+vagrant up
 ```
 
 Then in another terminal, run:
