@@ -1,4 +1,4 @@
-# Ansible Brownbag
+# Ansible Star Wars brownbag
 
 ## Getting ready
 
@@ -45,5 +45,7 @@ ansible all -m ping -i hosts
 ```
 
 ## Playing with ansible
+
+### The mongodb example
 
 To be continued...
