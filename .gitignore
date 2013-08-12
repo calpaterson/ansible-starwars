@@ -1,2 +1,7 @@
 *~
 .vagrant/
+bin
+include
+lib
+local
+share
