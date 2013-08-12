@@ -2,6 +2,8 @@
 
 ## Getting ready
 
+**Quick, quick, quick we need to save time!**
+
 Make sure you have:
 
 - python
@@ -9,17 +11,23 @@ Make sure you have:
 - virtualenv
 - vagrant
 
-Straight-away, run:
+I'll pass around the precise64.box somehow
+
+Straight-away (need to save time!), run:
 
 ```
-vagrant up
+vagrant box add precise64 precise64.box # Add the precise64 vm image to vagrant
+vagrant up # Spin up the three boxes
 ```
 
 Then in another terminal, run:
 
 ```
+# Create a python virtualenv to install ansible into (a bit like virtualenv)
 virtualenv .
+# Enter the virtualenv
 source bin/activate
+# Install ansible (and it's dependancies)
 pip install ansible
 ```
 
@@ -36,4 +44,6 @@ Now run this to check that everything is fine:
 ansible all -m ping -i hosts
 ```
 
-## 
+## Playing with ansible
+
+To be continued...
