@@ -34,9 +34,9 @@ pip install ansible
 Put this in your ```/etc/hosts``` file:
 
 ```
-127.0.0.1 han
-127.0.0.1 luke
-127.0.0.1 leia
+10.0.0.2 han
+10.0.0.3 luke
+10.0.0.4 leia
 ```
 
 Now run this to check that everything is fine:
