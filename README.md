@@ -6,10 +6,10 @@
 
 Make sure you have:
 
-- python
-- pip
-- virtualenv
-- vagrant
+- ```python```
+- ```pip```
+- ```virtualenv```
+- ```vagrant```
 
 I'll pass around the precise64.box somehow
 
