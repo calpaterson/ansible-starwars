@@ -1,0 +1,3 @@
+---
+- name: update apt now the repo is added
+  apt: update_cache=yes

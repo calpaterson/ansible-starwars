@@ -1,0 +1,26 @@
+---
+# - name: remove old mongodb
+#   apt: pkg=mongodb-server state=absent
+
+- copy: src=mongodb.conf dest=/etc/mongodb.conf
+
+- name: add 10gen repo key
+  apt_key: url=http://docs.mongodb.org/10gen-gpg-key.asc state=present
+
+- name: add 10gen repo
+  copy: content='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'
+        dest=/etc/apt/sources.list.d/10gen.list
+  notify: update apt
+
+- name: install mongodb-10gen
+  apt: pkg=mongodb-10gen state=present
+
+- name: start mongodb
+  service: name=mongodb state=started
+
+- pause: seconds=30
+
+- copy: src=initialise_replica_set.js dest=/tmp/initialise_replica_set.js
+
+- name: initialise the replica set
+  shell: cat /tmp/initialise_replica_set.js | mongo
