@@ -1,7 +1,4 @@
 ---
-# - name: remove old mongodb
-#   apt: pkg=mongodb-server state=absent
-
 - copy: src=mongodb.conf dest=/etc/mongodb.conf
 
 - name: add 10gen repo key
