@@ -5,9 +5,13 @@
   apt_key: url=http://docs.mongodb.org/10gen-gpg-key.asc state=present
 
 - name: add 10gen repo
-  copy: content='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen'
+  copy: content='deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen '
         dest=/etc/apt/sources.list.d/10gen.list
-  notify: update apt
+  register: repo
+
+- name: update apt
+  apt: update_cache=yes
+  when_changed: $repo
 
 - name: install mongodb-10gen
   apt: pkg=mongodb-10gen state=present
@@ -18,6 +22,10 @@
 - pause: seconds=30
 
 - copy: src=initialise_replica_set.js dest=/tmp/initialise_replica_set.js
+  tags:
+    - replica_set
 
 - name: initialise the replica set
   shell: cat /tmp/initialise_replica_set.js | mongo
+  tags:
+    - replica_set
