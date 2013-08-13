@@ -13,12 +13,9 @@ Make sure you have:
 
 I'll pass around the precise64.box somehow
 
-Straight-away (need to save time!), run:
+Spin up the boxes straight-away (need to save time!), run:
 
 ```
-# Add the precise64 vm image to vagrant
-vagrant box add precise64 http://files.vagrantup.com/precise64.box
-# Spin up the three boxes
 vagrant up
 ```
 
