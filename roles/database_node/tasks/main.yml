@@ -1,6 +1,4 @@
 ---
-- copy: src=mongodb.conf dest=/etc/mongodb.conf
-
 - name: add 10gen repo key
   apt_key: url=http://docs.mongodb.org/10gen-gpg-key.asc state=present
 
@@ -15,6 +13,9 @@
 
 - name: install mongodb-10gen
   apt: pkg=mongodb-10gen state=present
+
+- copy: src=mongodb.conf dest=/etc/mongodb.conf
+  notify: restart mongodb
 
 - name: start mongodb
   service: name=mongodb state=started
