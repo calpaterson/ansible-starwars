@@ -11,6 +11,14 @@ Make sure you have:
 - ```virtualenv```
 - ```vagrant```
 
+On a macintosh:
+
+```
+brew install python
+brew install vagrant
+pip install virtualenv
+```
+
 I'll pass around the precise64.box somehow
 
 To spin up the boxes run:
