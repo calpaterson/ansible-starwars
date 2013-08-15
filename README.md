@@ -13,7 +13,7 @@ Make sure you have:
 
 I'll pass around the precise64.box somehow
 
-Spin up the boxes straight-away (need to save time!), run:
+To spin up the boxes run:
 
 ```
 vagrant up
@@ -47,4 +47,8 @@ ansible all -m ping -i hosts
 
 ### The mongodb example
 
-To be continued...
+Running the database playbook:
+
+```
+ansible-playbook -i hosts site.yml
+```
