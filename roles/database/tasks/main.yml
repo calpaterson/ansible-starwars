@@ -19,8 +19,10 @@
 
 - name: start mongodb
   service: name=mongodb state=started
+  register: start_mongodb
 
 - pause: seconds=30
+  when_changed: $start_mongodb
 
 - copy: src=initialise_replica_set.js dest=/tmp/initialise_replica_set.js
   tags:
